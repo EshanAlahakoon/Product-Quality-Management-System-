@@ -1,0 +1,158 @@
+//const int s0 = 8; 
+//const int s1 = 9; 
+const int ir_sensor = 2;
+const int buzzer = 3;
+const int s2 = 12; 
+const int s3 = 11; 
+const int out = 10;
+const int relay = 13;
+
+
+// Product counters
+int redCount = 0;
+int greenCount = 0;
+int blueCount = 0;
+int totalProductCount = 0;
+int defectiveProductCount = 0;
+
+// Variables 
+int red = 0; 
+int green = 0; 
+int blue = 0; 
+   
+void setup()  
+{ 
+  Serial.begin(9600);
+  //pinMode(s0, OUTPUT); 
+  //pinMode(s1, OUTPUT); 
+  pinMode(ir_sensor, INPUT);
+  pinMode(relay, OUTPUT);
+  digitalWrite(relay, HIGH); // Conveyor off initially
+  pinMode(buzzer, OUTPUT);
+
+  pinMode(s2, OUTPUT); 
+  pinMode(s3, OUTPUT); 
+  pinMode(out, INPUT); 
+
+} 
+   
+void loop()
+{ 
+   // Process serial input for setting dimensions and controlling conveyor
+    if (Serial.available()) {
+        String command = Serial.readStringUntil('\n');
+        
+        if (command == "START") {
+            digitalWrite(relay, LOW); // Start conveyor
+            Serial.println("Conveyor Started");
+        } else if (command == "STOP") {
+            digitalWrite(relay, HIGH); // Stop conveyor
+            Serial.println("Conveyor Stopped");
+        } else if (command == "RESET") { //get resetbutton signal
+            resetCounters();
+        }
+    }
+
+    //get resetbutton signal 
+/* if (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
+    if (command == "RESET") {
+      resetCounters();
+    }
+  }
+*/
+
+  color();
+  /*
+  Serial.print("\n R Intensity:"); 
+  Serial.print(red, DEC); 
+  Serial.print(" G Intensity: "); 
+  Serial.print(green, DEC); 
+  Serial.print(" B Intensity : "); 
+  Serial.print(blue, DEC); 
+  */
+  //Serial.println(); 
+
+  if (digitalRead(ir_sensor) == LOW){
+
+    digitalWrite(buzzer, HIGH); // Sound buzzer
+    digitalWrite(relay, HIGH);  // Stop conveyor
+    delay(300);
+    //digitalWrite(buzzer, HIGH);
+    digitalWrite(buzzer, LOW);  // Turn off buzzer
+    
+    
+    if (red > blue && red > green && (red >50 && red < 200 && green > 10 && green < 100 && blue > 10 && blue < 120))
+    { 
+      Serial.println(" Red Color"); 
+      redCount++;
+      totalProductCount++;
+    }
+    else if (blue > red && blue > green && (blue < 225 && blue > 100 && green > 80 && green < 195 && red > 0 && red < 60))
+    { 
+      Serial.println(" Blue Color"); 
+      blueCount++;
+      totalProductCount++;
+    }
+    else if (green >= red && green > blue && (green > 80 && green < 230 && blue > 60 && blue < 180 && red > 100 && red < 230))
+    { 
+      Serial.println(" Green Color"); 
+      greenCount++;
+      totalProductCount++;
+    }
+    else if (red > 0 && green > 0 && blue > 0 && ((red < 255 || red > 265) && (green < 265 && green > 50) && (blue < 255 && blue > 100)))
+    {
+      Serial.println(" Defective Product");
+      defectiveProductCount++;
+    }
+    delay(1000);
+    digitalWrite(relay, LOW);//start conveyor
+    delay(500);
+    //digitalWrite(ir_sensor, HIGH); 
+     
+    
+  }
+  
+    // Send data to C# application
+  
+    Serial.println("Red Count:" + String(redCount));
+    Serial.println("Blue Count:" + String(blueCount));
+    Serial.println("Green Count:" + String(greenCount));
+    Serial.println("Total Count:" + String(totalProductCount));
+    Serial.println("Defective Count:" + String(defectiveProductCount));
+
+    
+   // digitalWrite(relay, LOW); // start conveyor
+   // digitalWrite(ir_sensor, HIGH); 
+
+
+} 
+
+//reset counts 
+void resetCounters() {
+  redCount = 0;
+  greenCount = 0;
+  blueCount = 0;
+  totalProductCount = 0;
+  defectiveProductCount = 0;
+  Serial.println("Counters reset");
+}
+
+void color() 
+{   
+  digitalWrite(s2, LOW); 
+  digitalWrite(s3, LOW); 
+  //count OUT, pRed, RED 
+  red = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH); 
+  digitalWrite(s3, HIGH); 
+  //count OUT, pBLUE, BLUE 
+  blue = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH); 
+  digitalWrite(s2, HIGH);
+  //count OUT, pGreen, GREEN 
+  green = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH); 
+
+  red = map(red,145,68,0,255);
+  green = map(green,163,78,0,255);
+  blue = map(blue,157,71,0,255);
+}

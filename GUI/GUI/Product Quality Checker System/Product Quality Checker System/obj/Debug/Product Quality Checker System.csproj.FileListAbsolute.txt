@@ -1,0 +1,20 @@
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\bin\Debug\Product Quality Checker System.exe.config
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\bin\Debug\Product Quality Checker System.exe
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\bin\Debug\Product Quality Checker System.pdb
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product_Quality_Checker_System.f.resources
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product_Quality_Checker_System.Properties.Resources.resources
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.csproj.GenerateResource.cache
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.exe
+C:\Users\User\Downloads\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.pdb
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\bin\Debug\Product Quality Checker System.exe.config
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\bin\Debug\Product Quality Checker System.exe
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\bin\Debug\Product Quality Checker System.pdb
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.csproj.AssemblyReference.cache
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product_Quality_Checker_System.f.resources
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product_Quality_Checker_System.Properties.Resources.resources
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.csproj.GenerateResource.cache
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.csproj.CoreCompileInputs.cache
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.exe
+E:\university\2nd Year\2.2\Digital Control Systems Technology\IOT Project\GUI\GUI\Product Quality Checker System\Product Quality Checker System\obj\Debug\Product Quality Checker System.pdb
